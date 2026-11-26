@@ -1,6 +1,7 @@
 #############
 ## Zeste de Savoir
 #############
+.env
 base.db
 .sass-cache/
 .local/
