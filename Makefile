@@ -137,6 +137,18 @@ wipe-db: ## Remove the database and the contents directories
 	rm -rf contents-public/*
 
 ##
+## ~ Celery
+
+broker-start: ## Start RabbitMQ (Docker)
+	docker compose up -d rabbitmq
+
+broker-stop: ## Stop RabbitMQ (Docker)
+	docker compose stop rabbitmq
+
+run-worker: zmd-check ## Run the Celery worker
+	celery -A zds worker -l info -Q default
+
+##
 ## ~ Tools
 
 generate-doc: ## Generate the project's documentation

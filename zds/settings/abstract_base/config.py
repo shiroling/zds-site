@@ -6,6 +6,7 @@ config = {}
 
 if config_path := os.environ.get("ZDS_CONFIG"):
     with open(config_path, "rb") as f:
+
         config = tomllib.load(f)
     print(f"Using the config file at {config_path!r}")
 

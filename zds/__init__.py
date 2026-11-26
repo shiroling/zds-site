@@ -23,3 +23,7 @@ try:
 except ImportError:
     __version__ = "dev"
     git_version = None
+
+from .celery import app as celery_app
+
+__all__ = ("celery_app", "json_handler", "__version__", "git_version")
